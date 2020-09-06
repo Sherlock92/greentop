@@ -118,6 +118,8 @@ void StreamApi::read() {
 void StreamApi::parseResponse(std::stringstream& response) {
     Json::Value json;
     response >> json;
+    std::cout << json << std::endl;
+    
 
     if (json.isMember("op") && json["op"] == "mcm") {
         stream::MarketChangeMessage mcm;        
